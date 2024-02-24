@@ -14,13 +14,3 @@ steps:
     appType: 'webAppLinux'
     appName: 'gab-webapp1'
     package: '$(System.DefaultWorkingDirectory)/**/*.zip'
-  
-  - task: DotNetCoreCLI@2
-    inputs:
-      command: 'build'
-    
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
-    publishLocation: 'Container'
